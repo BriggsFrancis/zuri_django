@@ -1,0 +1,21 @@
+{% extends 'musicapp/base.html' %} {% block title %} Home{%endblock title %}
+{%block content %}
+<h1>LATEST REALSES!</h1>
+<div class="list_of_artiste">
+  <ol>
+    {% for song in Song %}
+
+    <li>
+      <strong >
+        {{song.artiste.first_name}} {{song.artiste.last_name}}
+      </strong>
+      released <strong><a
+        href="{% url 'detail-page' song.id %}" style="color: black">'{{song.title}}'</a
+        ></strong>  in {{song.date_released}}
+    </li>
+
+    {% endfor %}
+  </ol>
+</div>
+
+{% endblock content %}

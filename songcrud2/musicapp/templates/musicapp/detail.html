@@ -1,0 +1,8 @@
+{% extends 'musicapp/base.html' %} {% block title %} Home{%endblock title %}
+{%block content %}
+<h1>Lyrics</h1>
+<div class="list_of_artiste">
+  <strong>{{song.title}}</strong> by <strong>{{song.artiste.first_name}} {{song.artiste.last_name}}</strong>
+  <div>{{song.lyric}}</div>
+</div>
+{% endblock content %}
